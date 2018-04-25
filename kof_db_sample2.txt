@@ -1,0 +1,136 @@
+﻿/*
+Script gerado por Aqua Data Studio 18.5.0-2 em abr-23-2018 12:10:14 AM
+Banco de Dados: null
+Esquema: <Todos os Esquemas>
+*/
+
+ALTER TABLE "podium"
+	DROP CONSTRAINT "fk_champion_podium" CASCADE ;
+ALTER TABLE "round_score"
+	DROP CONSTRAINT "fk_char_roundScore" CASCADE ;
+ALTER TABLE "characters"
+	DROP CONSTRAINT "fk_gameVersion_characterGame" CASCADE ;
+ALTER TABLE "matches"
+	DROP CONSTRAINT "fk_player_matches_playerOne" CASCADE ;
+ALTER TABLE "matches"
+	DROP CONSTRAINT "fk_player_matches_PlayerTwo" CASCADE ;
+ALTER TABLE "podium"
+	DROP CONSTRAINT "fk_podium_player" CASCADE ;
+ALTER TABLE "round_score"
+	DROP CONSTRAINT "fk_team_roundScore" CASCADE ;
+ALTER TABLE "matches"
+	DROP CONSTRAINT "fk_team_matchP1" CASCADE ;
+ALTER TABLE "matches"
+	DROP CONSTRAINT "fk_team_matchP2" CASCADE ;
+DROP TABLE "championship";
+DROP TABLE "characters";
+DROP TABLE "game_version";
+DROP TABLE "matches";
+DROP TABLE "player";
+DROP TABLE "podium";
+DROP TABLE "round_score";
+DROP TABLE "team";
+CREATE TABLE "championship"  ( 
+	"id"       	bigint NOT NULL,
+	"name"     	varchar(100) NULL,
+	"dateStart"	date NULL,
+	"dateEnd"  	date NULL 
+	);
+CREATE TABLE "characters"  ( 
+	"id"        	bigserial NOT NULL,
+	"name"      	varchar(50) NULL,
+	"game"      	bigint NULL,
+	"picked"    	bigint NULL,
+	"round_win" 	bigint NULL,
+	"round_loss"	bigint NULL 
+	);
+CREATE TABLE "game_version"  ( 
+	"id"     	bigserial NOT NULL,
+	"year"   	int NULL,
+	"version"	varchar(100) NULL 
+	);
+CREATE TABLE "matches"  ( 
+	"id"           	bigserial NOT NULL,
+	"playerOne"    	bigint NULL,
+	"playerTwo"    	bigint NULL,
+	"teamPlayerOne"	bigint NULL,
+	"teamPlayerTwo"	bigint NULL 
+	);
+CREATE TABLE "player"  ( 
+	"id"       	bigserial NOT NULL,
+	"nickname" 	varchar(100) NULL,
+	"victories"	bigint NULL,
+	"defeats"  	bigint NULL,
+	"country"  	varchar(50) NULL 
+	);
+CREATE TABLE "podium"  ( 
+	"championship_id"	bigint NOT NULL,
+	"player_id"      	bigint NOT NULL,
+	"playerPosition" 	bigint NULL 
+	);
+CREATE TABLE "round_score"  ( 
+	"team_id"      	bigint NOT NULL,
+	"char_id"      	bigint NOT NULL,
+	"roundWin"     	int NULL,
+	"roundDefeated"	int NULL 
+	);
+CREATE TABLE "team"  ( 
+	"id"            	bigserial NOT NULL,
+	"characterOne"  	bigint NULL,
+	"characterTwo"  	bigint NULL,
+	"characterThree"	bigint NULL 
+	);
+ALTER TABLE "podium"
+	ADD CONSTRAINT "fk_champion_podium"
+	FOREIGN KEY("championship_id")
+	REFERENCES "championship"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "round_score"
+	ADD CONSTRAINT "fk_char_roundScore"
+	FOREIGN KEY("char_id")
+	REFERENCES "characters"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "characters"
+	ADD CONSTRAINT "fk_gameVersion_characterGame"
+	FOREIGN KEY("game")
+	REFERENCES "game_version"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "matches"
+	ADD CONSTRAINT "fk_player_matches_playerOne"
+	FOREIGN KEY("playerOne")
+	REFERENCES "player"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "matches"
+	ADD CONSTRAINT "fk_player_matches_PlayerTwo"
+	FOREIGN KEY("playerTwo")
+	REFERENCES "player"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "podium"
+	ADD CONSTRAINT "fk_podium_player"
+	FOREIGN KEY("player_id")
+	REFERENCES "player"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "round_score"
+	ADD CONSTRAINT "fk_team_roundScore"
+	FOREIGN KEY("team_id")
+	REFERENCES "team"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "matches"
+	ADD CONSTRAINT "fk_team_matchP1"
+	FOREIGN KEY("teamPlayerOne")
+	REFERENCES "team"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
+ALTER TABLE "matches"
+	ADD CONSTRAINT "fk_team_matchP2"
+	FOREIGN KEY("teamPlayerTwo")
+	REFERENCES "team"("id")
+	ON DELETE NO ACTION 
+	ON UPDATE NO ACTION ;
