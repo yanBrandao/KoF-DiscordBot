@@ -4,12 +4,16 @@ import asyncio
 import discord
 import chalk
 import psycopg2
+import time
+
+
 
 from DBConnection import *
 from discord.ext import commands
 from discord.ext.commands import Bot
 
 
+userConnect = { '_init_': -1}
 bot = commands.Bot(command_prefix="#")
 
 @bot.event
@@ -20,9 +24,19 @@ async def on_ready():
 
 @bot.event
 async def on_member_update(before, after):
-	playerGame = discord.Member.game
-	if playerGame:
-		print("Está jogando {}".format(playerGame))
+		print('{0.nick} encerrou {0.game}'.format(before))
+		game = '{0.game}'.format(after)
+		nick = '{0.nick}'.format(after)
+		print('{0.nick} iniciou {0.game}'.format(after))
+		if game != 'None':
+			userConnect[nick] = time.time()
+			print(userConnect)
+		game = '{0.game}'.format(before)
+		nick = '{0.nick}'.format(before)
+		if game != 'None':
+			timeSpend = time.time() - userConnect[nick]
+			userConnect.__delitem__(nick)
+			print(timeSpend)
 
 @bot.event
 async def on_voice_state_update(before, after):
