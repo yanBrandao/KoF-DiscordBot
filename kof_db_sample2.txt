@@ -2,6 +2,10 @@
 Script gerado por Aqua Data Studio 18.5.0-2 em abr-23-2018 12:10:14 AM
 Banco de Dados: null
 Esquema: <Todos os Esquemas>
+
+v1.01 - Editado por: yan.brandao Data: 30/04/2018 08:06 AM
+Adição do serial no Championship
+Adição das chaves primárias de cada tabela.
 */
 
 ALTER TABLE "podium"
@@ -31,7 +35,7 @@ DROP TABLE "podium";
 DROP TABLE "round_score";
 DROP TABLE "team";
 CREATE TABLE "championship"  ( 
-	"id"       	bigint NOT NULL,
+	"id"       	bigserial NOT NULL,
 	"name"     	varchar(100) NULL,
 	"dateStart"	date NULL,
 	"dateEnd"  	date NULL 
@@ -51,13 +55,13 @@ CREATE TABLE "game_version"  (
 	);
 CREATE TABLE "matches"  ( 
 	"id"           	bigserial NOT NULL,
-	"playerOne"    	bigint NULL,
-	"playerTwo"    	bigint NULL,
+	"playerOne"    	varchar(100) NULL,
+	"playerTwo"    	varchar(100) NULL,
 	"teamPlayerOne"	bigint NULL,
 	"teamPlayerTwo"	bigint NULL 
 	);
 CREATE TABLE "player"  ( 
-	"id"       	bigserial NOT NULL,
+	"discordUser" varchar(100) NOT NULL,
 	"nickname" 	varchar(100) NULL,
 	"victories"	bigint NULL,
 	"defeats"  	bigint NULL,
@@ -65,7 +69,7 @@ CREATE TABLE "player"  (
 	);
 CREATE TABLE "podium"  ( 
 	"championship_id"	bigint NOT NULL,
-	"player_id"      	bigint NOT NULL,
+	"player_id"      	varchar(100) NOT NULL,
 	"playerPosition" 	bigint NULL 
 	);
 CREATE TABLE "round_score"  ( 
@@ -80,6 +84,30 @@ CREATE TABLE "team"  (
 	"characterTwo"  	bigint NULL,
 	"characterThree"	bigint NULL 
 	);
+
+ALTER TABLE public.player
+    ADD PRIMARY KEY ("discordUser");
+
+ALTER TABLE public.championship
+    ADD PRIMARY KEY (id);
+
+
+ALTER TABLE public.characters
+    ADD PRIMARY KEY (id);
+
+
+ALTER TABLE public.game_version
+    ADD PRIMARY KEY (id);
+
+
+ALTER TABLE public.matches
+    ADD PRIMARY KEY (id);
+
+
+ALTER TABLE public.team
+    ADD PRIMARY KEY (id);
+
+
 ALTER TABLE "podium"
 	ADD CONSTRAINT "fk_champion_podium"
 	FOREIGN KEY("championship_id")
@@ -101,19 +129,19 @@ ALTER TABLE "characters"
 ALTER TABLE "matches"
 	ADD CONSTRAINT "fk_player_matches_playerOne"
 	FOREIGN KEY("playerOne")
-	REFERENCES "player"("id")
+	REFERENCES "player"("discordUser")
 	ON DELETE NO ACTION 
 	ON UPDATE NO ACTION ;
 ALTER TABLE "matches"
 	ADD CONSTRAINT "fk_player_matches_PlayerTwo"
 	FOREIGN KEY("playerTwo")
-	REFERENCES "player"("id")
+	REFERENCES "player"("discordUser")
 	ON DELETE NO ACTION 
 	ON UPDATE NO ACTION ;
 ALTER TABLE "podium"
 	ADD CONSTRAINT "fk_podium_player"
 	FOREIGN KEY("player_id")
-	REFERENCES "player"("id")
+	REFERENCES "player"("discordUser")
 	ON DELETE NO ACTION 
 	ON UPDATE NO ACTION ;
 ALTER TABLE "round_score"
