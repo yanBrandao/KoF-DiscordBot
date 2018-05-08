@@ -4,7 +4,16 @@ class DBConnection(object):
     _db=None
     
     def __init__(self):
-       self._db = psycopg2.connect(host='localhost', database='postgres', user='postgres', password='',port='5433')
+        file = open('host.token', 'r')
+        filedbname = open('dbname.token', 'r')
+        fileuser = open('user.token', 'r')
+        filepass = open('pass.token', 'r')
+        tokenHOST = file.read()
+        tokenDATA = filedbname.read()
+        tokenUSER = fileuser.read()
+        tokenPASS = filepass.read()
+        
+        self._db = psycopg2.connect(host=tokenHOST, database=tokenDATA, user=tokenUSER, password=tokenPASS,port='5432')
 
     def changeDatabase(self, sql):
         returnBool = True
