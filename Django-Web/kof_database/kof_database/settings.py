@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'kof_database.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'd6kua5mrj41het',
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '', # 8000 is default
+        'USER': 'xdzqcwqxtdgjzn',
+        'PASSWORD': '2a3660577fc80a42b955d6c6f5de6abcc22c2a3d58e6fdff751f8870bc28eb19',
+        'HOST': 'ec2-54-204-39-46.compute-1.amazonaws.com',
+        'PORT': '5432', # 8000 is default
     }
 }
 
