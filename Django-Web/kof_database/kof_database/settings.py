@@ -123,4 +123,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/Users/yanbrandaodiniz/Developer/KoF-DiscordBot/Django-Web/kof_database/static/',
+]
+
+STATIC_ROOT = "/Users/yanbrandaodiniz/Developer/KoF-DiscordBot/Django-Web/kof_database/staticfiles/"
+
 STATIC_URL = '/static/'

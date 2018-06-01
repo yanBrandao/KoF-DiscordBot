@@ -30,18 +30,11 @@ class Characters(models.Model):
 
 class Team(models.Model):
 	id = models.IntegerField(primary_key=True)
-	characterOne = models.ForeignKey(Characters, related_name='%(class)s_requests_created', on_delete=models.CASCADE)
-	characterTwo = models.ManyToManyField(
-        OtherModel,
-        related_name="%(app_label)s_%(class)s_related",
-        related_query_name="%(app_label)s_%(class)ss",
-    )
-	characterThree = models.ForeignKey(Characters, on_delete=models.CASCADE)
+	characters = models.ManyToManyField(Characters)
 
 class Matches(models.Model):
 	id = models.IntegerField(primary_key=True)
-	playerOne = models.ForeignKey(Player, on_delete=models.CASCADE)
-	playerTwo = models.ForeignKey(Player, on_delete=models.CASCADE)
+	players = models.ManyToManyField(Player)
 
 class Round_Score(models.Model):
 	team_id = models.ForeignKey(Team, on_delete=models.CASCADE)

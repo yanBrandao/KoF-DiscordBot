@@ -1,9 +1,23 @@
 {% extends "database/base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container">
 
+<form>
 	
+
+    <input type="text" name="discordUser">
+    <input type="nickname" name="nickname">
+
+    <select name="country">
+
+    	<option value="BR"> <img class="flag" src="{% static 'css/flags/4x3/br.svg' %}" alt="Brazil Flag"> Brasil</option>
+    </select>
+    <div id="demoBasic" class="dd-container" style="width: 260px;"><div class="dd-select" style="width: 260px; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;"><input class="dd-selected-value" type="hidden"><a class="dd-selected">Select your favorite social network</a><span class="dd-pointer dd-pointer-down dd-pointer-up"></span></div><ul class="dd-options dd-click-off-close" style="width: 260px; display: block;"><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="FB"> <img class="dd-option-image" src="http://i.imgur.com/XkuTj3B.png"> <label class="dd-option-text">Facebook</label> <small class="dd-option-description dd-desc">Description with Facebook</small></a></li><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="TWT"> <img class="dd-option-image" src="http://i.imgur.com/8ScLNnk.png"> <label class="dd-option-text">Twitter</label> <small class="dd-option-description dd-desc">Description with Twitter</small></a></li><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="LI"> <img class="dd-option-image" src="http://i.imgur.com/aDNdibj.png"> <label class="dd-option-text">LinkedIn</label> <small class="dd-option-description dd-desc">Description with LinkedIn</small></a></li><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="FSQ"> <img class="dd-option-image" src="http://i.imgur.com/kFAk2DX.png"> <label class="dd-option-text">Foursquare</label> <small class="dd-option-description dd-desc">Description with Foursquare</small></a></li></ul></div>
+	<br><br>
+    <input type="submit">
+</form>
 
 </div>
 
@@ -13,6 +27,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.ddslick.min.js' %}"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
@@ -23,6 +38,37 @@
 
 <script type="text/javascript">
 
+//Dropdown plugin data
+var ddData = [
+    {
+        text: "Facebook",
+        value: 1,
+        selected: false,
+        description: "Description with Facebook",
+        imageSrc: "http://i.imgur.com/XkuTj3B.png"
+    },
+    {
+        text: "Twitter",
+        value: 2,
+        selected: false,
+        description: "Description with Twitter",
+        imageSrc: "http://i.imgur.com/8ScLNnk.png"
+    },
+    {
+        text: "LinkedIn",
+        value: 3,
+        selected: true,
+        description: "Description with LinkedIn",
+        imageSrc: "http://i.imgur.com/aDNdibj.png"
+    },
+    {
+        text: "Foursquare",
+        value: 4,
+        selected: false,
+        description: "Description with Foursquare",
+        imageSrc: "http://i.imgur.com/kFAk2DX.png"
+    }
+];
 //Put yout code here.
 
 </script>
