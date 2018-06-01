@@ -6,18 +6,283 @@
 
 <form>
 	
-
+    <table>
+        <th>TEste</th>
+        <td>huehue</td>
+        <td>auehaueh2</td>
+    </table>
     <input type="text" name="discordUser">
     <input type="nickname" name="nickname">
 
-    <select name="country">
-
-    	<option value="BR"> <img class="flag" src="{% static 'css/flags/4x3/br.svg' %}" alt="Brazil Flag"> Brasil</option>
-    </select>
-    <div id="demoBasic" class="dd-container" style="width: 260px;"><div class="dd-select" style="width: 260px; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;"><input class="dd-selected-value" type="hidden"><a class="dd-selected">Select your favorite social network</a><span class="dd-pointer dd-pointer-down dd-pointer-up"></span></div><ul class="dd-options dd-click-off-close" style="width: 260px; display: block;"><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="FB"> <img class="dd-option-image" src="http://i.imgur.com/XkuTj3B.png"> <label class="dd-option-text">Facebook</label> <small class="dd-option-description dd-desc">Description with Facebook</small></a></li><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="TWT"> <img class="dd-option-image" src="http://i.imgur.com/8ScLNnk.png"> <label class="dd-option-text">Twitter</label> <small class="dd-option-description dd-desc">Description with Twitter</small></a></li><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="LI"> <img class="dd-option-image" src="http://i.imgur.com/aDNdibj.png"> <label class="dd-option-text">LinkedIn</label> <small class="dd-option-description dd-desc">Description with LinkedIn</small></a></li><li><a class="dd-option"> <input class="dd-option-value" type="hidden" value="FSQ"> <img class="dd-option-image" src="http://i.imgur.com/kFAk2DX.png"> <label class="dd-option-text">Foursquare</label> <small class="dd-option-description dd-desc">Description with Foursquare</small></a></li></ul></div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn"><p style="margin: 0px">País &dArr;</p></button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Buscar.." id="myInput" onkeyup="filterFunction()">
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ad.svg' %}" width="16px">ad</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/as.svg' %}" width="16px">as</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bf.svg' %}" width="16px">bf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/br.svg' %}" width="16px">br</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cf.svg' %}" width="16px">cf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cu.svg' %}" width="16px">cu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/do.svg' %}" width="16px">do</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/eu.svg' %}" width="16px">eu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gb-sct.svg' %}" width="16px">gb-sct</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gm.svg' %}" width="16px">gm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/hk.svg' %}" width="16px">hk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/in.svg' %}" width="16px">in</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ke.svg' %}" width="16px">ke</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kz.svg' %}" width="16px">kz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lv.svg' %}" width="16px">lv</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ml.svg' %}" width="16px">ml</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mv.svg' %}" width="16px">mv</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ni.svg' %}" width="16px">ni</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pf.svg' %}" width="16px">pf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pw.svg' %}" width="16px">pw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sc.svg' %}" width="16px">sc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sn.svg' %}" width="16px">sn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/td.svg' %}" width="16px">td</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tr.svg' %}" width="16px">tr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/uy.svg' %}" width="16px">uy</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ws.svg' %}" width="16px">ws</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ae.svg' %}" width="16px">ae</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/at.svg' %}" width="16px">at</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bg.svg' %}" width="16px">bg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bs.svg' %}" width="16px">bs</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cg.svg' %}" width="16px">cg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cv.svg' %}" width="16px">cv</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/dz.svg' %}" width="16px">dz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/fi.svg' %}" width="16px">fi</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gb-wls.svg' %}" width="16px">gb-wls</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gn.svg' %}" width="16px">gn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/hm.svg' %}" width="16px">hm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/io.svg' %}" width="16px">io</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kg.svg' %}" width="16px">kg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/la.svg' %}" width="16px">la</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ly.svg' %}" width="16px">ly</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mm.svg' %}" width="16px">mm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mw.svg' %}" width="16px">mw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/nl.svg' %}" width="16px">nl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pg.svg' %}" width="16px">pg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/py.svg' %}" width="16px">py</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sd.svg' %}" width="16px">sd</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/so.svg' %}" width="16px">so</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tf.svg' %}" width="16px">tf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tt.svg' %}" width="16px">tt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/uz.svg' %}" width="16px">uz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ye.svg' %}" width="16px">ye</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/af.svg' %}" width="16px">af</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/au.svg' %}" width="16px">au</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bh.svg' %}" width="16px">bh</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bt.svg' %}" width="16px">bt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ch.svg' %}" width="16px">ch</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cw.svg' %}" width="16px">cw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ec.svg' %}" width="16px">ec</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/fj.svg' %}" width="16px">fj</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gb.svg' %}" width="16px">gb</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gp.svg' %}" width="16px">gp</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/hn.svg' %}" width="16px">hn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/iq.svg' %}" width="16px">iq</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kh.svg' %}" width="16px">kh</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lb.svg' %}" width="16px">lb</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ma.svg' %}" width="16px">ma</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mn.svg' %}" width="16px">mn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mx.svg' %}" width="16px">mx</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/no.svg' %}" width="16px">no</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ph.svg' %}" width="16px">ph</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/qa.svg' %}" width="16px">qa</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/se.svg' %}" width="16px">se</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sr.svg' %}" width="16px">sr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tg.svg' %}" width="16px">tg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tv.svg' %}" width="16px">tv</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/va.svg' %}" width="16px">va</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/yt.svg' %}" width="16px">yt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ag.svg' %}" width="16px">ag</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/aw.svg' %}" width="16px">aw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bi.svg' %}" width="16px">bi</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bv.svg' %}" width="16px">bv</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ci.svg' %}" width="16px">ci</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cx.svg' %}" width="16px">cx</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ee.svg' %}" width="16px">ee</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/fk.svg' %}" width="16px">fk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gd.svg' %}" width="16px">gd</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gq.svg' %}" width="16px">gq</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/hr.svg' %}" width="16px">hr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ir.svg' %}" width="16px">ir</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ki.svg' %}" width="16px">ki</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lc.svg' %}" width="16px">lc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mc.svg' %}" width="16px">mc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mo.svg' %}" width="16px">mo</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/my.svg' %}" width="16px">my</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/np.svg' %}" width="16px">np</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pk.svg' %}" width="16px">pk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/re.svg' %}" width="16px">re</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sg.svg' %}" width="16px">sg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ss.svg' %}" width="16px">ss</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/th.svg' %}" width="16px">th</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tw.svg' %}" width="16px">tw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/vc.svg' %}" width="16px">vc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/za.svg' %}" width="16px">za</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ai.svg' %}" width="16px">ai</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ax.svg' %}" width="16px">ax</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bj.svg' %}" width="16px">bj</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bw.svg' %}" width="16px">bw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ck.svg' %}" width="16px">ck</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cy.svg' %}" width="16px">cy</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/eg.svg' %}" width="16px">eg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/fm.svg' %}" width="16px">fm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ge.svg' %}" width="16px">ge</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gr.svg' %}" width="16px">gr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ht.svg' %}" width="16px">ht</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/is.svg' %}" width="16px">is</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/km.svg' %}" width="16px">km</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/li.svg' %}" width="16px">li</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/md.svg' %}" width="16px">md</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mp.svg' %}" width="16px">mp</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mz.svg' %}" width="16px">mz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/nr.svg' %}" width="16px">nr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pl.svg' %}" width="16px">pl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ro.svg' %}" width="16px">ro</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sh.svg' %}" width="16px">sh</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/st.svg' %}" width="16px">st</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tj.svg' %}" width="16px">tj</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tz.svg' %}" width="16px">tz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ve.svg' %}" width="16px">ve</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/zm.svg' %}" width="16px">zm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/al.svg' %}" width="16px">al</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/az.svg' %}" width="16px">az</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bl.svg' %}" width="16px">bl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/by.svg' %}" width="16px">by</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cl.svg' %}" width="16px">cl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cz.svg' %}" width="16px">cz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/eh.svg' %}" width="16px">eh</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/fo.svg' %}" width="16px">fo</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gf.svg' %}" width="16px">gf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gs.svg' %}" width="16px">gs</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/hu.svg' %}" width="16px">hu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/it.svg' %}" width="16px">it</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kn.svg' %}" width="16px">kn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lk.svg' %}" width="16px">lk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/me.svg' %}" width="16px">me</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mq.svg' %}" width="16px">mq</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/na.svg' %}" width="16px">na</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/nu.svg' %}" width="16px">nu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pm.svg' %}" width="16px">pm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/rs.svg' %}" width="16px">rs</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/si.svg' %}" width="16px">si</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sv.svg' %}" width="16px">sv</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tk.svg' %}" width="16px">tk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ua.svg' %}" width="16px">ua</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/vg.svg' %}" width="16px">vg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/zw.svg' %}" width="16px">zw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/am.svg' %}" width="16px">am</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ba.svg' %}" width="16px">ba</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bm.svg' %}" width="16px">bm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bz.svg' %}" width="16px">bz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cm.svg' %}" width="16px">cm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/de.svg' %}" width="16px">de</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/er.svg' %}" width="16px">er</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/fr.svg' %}" width="16px">fr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gg.svg' %}" width="16px">gg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gt.svg' %}" width="16px">gt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/id.svg' %}" width="16px">id</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/je.svg' %}" width="16px">je</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kp.svg' %}" width="16px">kp</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lr.svg' %}" width="16px">lr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mf.svg' %}" width="16px">mf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mr.svg' %}" width="16px">mr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/nc.svg' %}" width="16px">nc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/nz.svg' %}" width="16px">nz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pn.svg' %}" width="16px">pn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ru.svg' %}" width="16px">ru</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sj.svg' %}" width="16px">sj</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sx.svg' %}" width="16px">sx</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tl.svg' %}" width="16px">tl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ug.svg' %}" width="16px">ug</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/vi.svg' %}" width="16px">vi</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ao.svg' %}" width="16px">ao</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bb.svg' %}" width="16px">bb</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bn.svg' %}" width="16px">bn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ca.svg' %}" width="16px">ca</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cn.svg' %}" width="16px">cn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/dj.svg' %}" width="16px">dj</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/es-ct.svg' %}" width="16px">es-ct</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ga.svg' %}" width="16px">ga</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gh.svg' %}" width="16px">gh</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gu.svg' %}" width="16px">gu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ie.svg' %}" width="16px">ie</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/jm.svg' %}" width="16px">jm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kr.svg' %}" width="16px">kr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ls.svg' %}" width="16px">ls</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mg.svg' %}" width="16px">mg</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ms.svg' %}" width="16px">ms</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ne.svg' %}" width="16px">ne</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/om.svg' %}" width="16px">om</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pr.svg' %}" width="16px">pr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/rw.svg' %}" width="16px">rw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sk.svg' %}" width="16px">sk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sy.svg' %}" width="16px">sy</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tm.svg' %}" width="16px">tm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/um.svg' %}" width="16px">um</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/vn.svg' %}" width="16px">vn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/aq.svg' %}" width="16px">aq</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bd.svg' %}" width="16px">bd</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bo.svg' %}" width="16px">bo</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cc.svg' %}" width="16px">cc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/co.svg' %}" width="16px">co</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/dk.svg' %}" width="16px">dk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/es.svg' %}" width="16px">es</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gb-eng.svg' %}" width="16px">gb-eng</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gi.svg' %}" width="16px">gi</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gw.svg' %}" width="16px">gw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/il.svg' %}" width="16px">il</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/jo.svg' %}" width="16px">jo</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/kw.svg' %}" width="16px">kw</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lt.svg' %}" width="16px">lt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mh.svg' %}" width="16px">mh</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mt.svg' %}" width="16px">mt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/nf.svg' %}" width="16px">nf</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pa.svg' %}" width="16px">pa</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ps.svg' %}" width="16px">ps</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sa.svg' %}" width="16px">sa</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sl.svg' %}" width="16px">sl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sz.svg' %}" width="16px">sz</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tn.svg' %}" width="16px">tn</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/un.svg' %}" width="16px">un</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/vu.svg' %}" width="16px">vu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ar.svg' %}" width="16px">ar</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/be.svg' %}" width="16px">be</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/bq.svg' %}" width="16px">bq</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cd.svg' %}" width="16px">cd</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/cr.svg' %}" width="16px">cr</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/dm.svg' %}" width="16px">dm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/et.svg' %}" width="16px">et</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gb-nir.svg' %}" width="16px">gb-nir</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gl.svg' %}" width="16px">gl</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/gy.svg' %}" width="16px">gy</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/im.svg' %}" width="16px">im</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/jp.svg' %}" width="16px">jp</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ky.svg' %}" width="16px">ky</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/lu.svg' %}" width="16px">lu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mk.svg' %}" width="16px">mk</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/mu.svg' %}" width="16px">mu</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/ng.svg' %}" width="16px">ng</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pe.svg' %}" width="16px">pe</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/pt.svg' %}" width="16px">pt</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sb.svg' %}" width="16px">sb</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/sm.svg' %}" width="16px">sm</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/tc.svg' %}" width="16px">tc</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/to.svg' %}" width="16px">to</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/us.svg' %}" width="16px">us</a>
+            <a href="#"><img class="flag" src="{% static 'css/flags/4x3/wf.svg' %}" width="16px">wf</a>
+        </div>
+    </div>
+    
 	<br><br>
-    <input type="submit">
 </form>
+    
+    <form>
+        
+    </form>
 
 </div>
 
@@ -38,39 +303,27 @@
 
 <script type="text/javascript">
 
-//Dropdown plugin data
-var ddData = [
-    {
-        text: "Facebook",
-        value: 1,
-        selected: false,
-        description: "Description with Facebook",
-        imageSrc: "http://i.imgur.com/XkuTj3B.png"
-    },
-    {
-        text: "Twitter",
-        value: 2,
-        selected: false,
-        description: "Description with Twitter",
-        imageSrc: "http://i.imgur.com/8ScLNnk.png"
-    },
-    {
-        text: "LinkedIn",
-        value: 3,
-        selected: true,
-        description: "Description with LinkedIn",
-        imageSrc: "http://i.imgur.com/aDNdibj.png"
-    },
-    {
-        text: "Foursquare",
-        value: 4,
-        selected: false,
-        description: "Description with Foursquare",
-        imageSrc: "http://i.imgur.com/kFAk2DX.png"
-    }
-];
-//Put yout code here.
+    $('.dropdown-content').attr('size', 5);
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
 </script>
 
 {% endblock %}
