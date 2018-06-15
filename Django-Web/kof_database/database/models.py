@@ -2,8 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Player(models.Model):
-    discordUser = models.CharField(max_length=100, primary_key=True)
+    email = models.CharField(max_length=100, primary_key=True)
     nickname = models.CharField(max_length=100)
+    password = models.CharField(max_length=50)
     victories = models.IntegerField()
     defeats = models.IntegerField()
     country = models.CharField(max_length=50)

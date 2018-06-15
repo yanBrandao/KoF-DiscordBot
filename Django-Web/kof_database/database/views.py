@@ -8,3 +8,8 @@ def index(request):
 	template = loader.get_template('database/index.html')
 	context = {}
 	return HttpResponse(template.render(context, request))
+
+def signUp(request):
+	template = loader.get_template('database/signUp.html')
+	context = {}
+	return HttpResponse(template.render(context, request))

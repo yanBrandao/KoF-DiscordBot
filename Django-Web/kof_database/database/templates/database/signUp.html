@@ -4,6 +4,20 @@
 {% block content %}
 <div class="container">
 
+<form action="#" method="post">
+      {% csrf_token %}
+    Email: <input type="text" name="email"> <br>
+    Nickname:<input type="text" name="nickname"><br>
+    Password: <input type="password" name="password"><br>
+    Repeat Password: <input type="password" name="repeat-password"><br>
+    Country:<input type="text" name="country"><br>
+
+    <input type="submit" name="Confirm" value="Confirm">
+
+    
+    
+	<br><br>
+</form>
 
 <!--<div class="dropdown">
         <button onclick="myFunction()" class="dropbtn"><p style="margin: 0px">País &dArr;</p></button>

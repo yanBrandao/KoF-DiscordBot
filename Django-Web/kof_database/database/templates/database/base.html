@@ -106,9 +106,9 @@ tr:hover{
 <body style="background-color: rgb(39,42,51)">
     <div class="myNavbar">
         <div class="navRow">
-            <b>The Official King of Fighters Ranking</b>
+            <b><a style="text-decoration: none;" href="{% url 'database:index' %}">The Official King of Fighters Ranking</a></b>
             <div class="loginButton">
-                <input type="button" name="Login" value="Login"></input>
+                    <a style="text-decoration: none;" href="{% url 'database:signUp' %}"><input type="button" name="Login" value="Login"></input></a>
             </div>
         </div>
     </div>
