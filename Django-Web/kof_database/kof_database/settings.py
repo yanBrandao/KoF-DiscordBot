@@ -125,9 +125,9 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/Users/yanbrandaodiniz/Developer/KoF-DiscordBot/Django-Web/kof_database/static/',
+    'C:/Users/Prof. Yan/Developer/KoF-DiscordBot/Django-Web/kof_database/static/',
 ]
 
-STATIC_ROOT = "/Users/yanbrandaodiniz/Developer/KoF-DiscordBot/Django-Web/kof_database/staticfiles/"
+STATIC_ROOT = "C:/Users/Prof. Yan/Developer/KoF-DiscordBot/Django-Web/kof_database/staticfiles/"
 
 STATIC_URL = '/static/'
