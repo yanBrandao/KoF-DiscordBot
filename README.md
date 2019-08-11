@@ -1,7 +1,7 @@
 [<p align="center">![intro](https://image.ibb.co/iA3GCS/kof_banner.png)</p>]()
 
  # KoF DiscordBot
- ## A The King Of Fighters customizable Discord bot
+ ### A The King Of Fighters customizable Discord bot
 >  *Specialized to admin KoF Games*
 
 
